@@ -1,0 +1,130 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+html,body{
+    height: 100vh;
+    width: 100%;
+    background-color: #90a7e8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.wrapper{
+    text-align: center;
+    background-color: #fff;
+    max-height: auto;
+    overflow: hidden;
+    width: 700px;
+    border-radius: 12px;
+    padding: 22px;
+}
+.wrapper .content{
+    height: 100%;
+    margin: 12px 0;
+    padding: 20px;
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+h2{
+    color: red;
+    opacity: 0;
+    display: none;
+}
+h2.active{
+    display: block;
+    animation: blink 1.5s ease-in-out infinite;
+}
+.input-txt{
+    z-index: -999;
+    opacity: 0;
+    position: absolute;
+}
+.content .text-content{
+    font-size: 20px;
+    text-align: justify;
+    font-weight: 400;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ccc;
+}
+.text-content p span.correct{
+    color: green;
+    /* background-color: rgb(184, 236, 184);
+    outline: 1ps solid #fff;
+    border-radius: 4px; */
+}
+.text-content p span{
+    position: relative;
+}
+.text-content p span.active{
+    color: #90a7e8;
+}
+.text-content p span.active::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 100%;
+    opacity: 0;
+    background-color: #90a7e8;
+    animation: blink 1s ease-in-out infinite;
+}
+@keyframes blink {
+    50%{
+        opacity: 1;
+    }
+}
+
+.time.last{
+    color: red;
+    font-size: 22px;
+}
+.text-content p span.incorrect{
+    color: red;
+    background-color: #ffc0cb;
+    outline: 1px solid #fff;
+    border-radius: 4px;
+}
+.result{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+}
+.result .result-content{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    list-style: none;
+    width: calc(100% -140px);
+}
+
+.result-content li{
+    display: flex;
+    height: 20px;
+    align-items: center;
+    width: 120px;
+}
+.result-content li:not(:first-child){
+    border-left: 1px solid #ccc;
+    padding-left: 12px;
+}
+.result button{
+    outline: none;
+    border: none;
+    width: 120px;
+    background-color: #90a7e8;
+    padding: 12px;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+button:active{
+    transform: scale(0.95);
+}
